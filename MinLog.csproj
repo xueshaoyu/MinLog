@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Nullable>enable</Nullable>
+	  <LangVersion>9.0</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>$(DefineConstants)TRACE;__CORE__</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>$(DefineConstants)TRACE;__CORE__</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="ActionLog.cs" />
+    <Compile Remove="CodeTimer.cs" />
+    <Compile Remove="ICounter.cs" />
+    <Compile Remove="ISpan.cs" />
+    <Compile Remove="ISpanBuilder.cs" />
+    <Compile Remove="ITracer.cs" />
+    <Compile Remove="LogEventListener.cs" />
+    <Compile Remove="MachineInfo.cs" />
+    <Compile Remove="NetworkLog.cs" />
+    <Compile Remove="PerfCounter.cs" />
+    <Compile Remove="TextControlLog.cs" />
+    <Compile Remove="TimeCost.cs" />
+    <Compile Remove="TraceStream.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="LogSettings.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="LogSettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
+  </ItemGroup>
+
+</Project>

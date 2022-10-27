@@ -1,0 +1,11 @@
+{
+  "Logger":{
+	  "Debug":true,//全局调试。XTrace.Debug
+	  "LogPath":"Log",
+	  "LogLevel":"Info",//日志等级。只输出大于等于该级别的日志，All/Debug/Info/Warn/Error/Fatal，默认Info
+	  "LogFileMaxBytes":10,//日志文件上限。超过上限后拆分新日志文件，默认10MB，0表示不限制大小
+	  "LogFileBackups":5,//日志文件备份。超过备份数后，最旧的文件将被删除，默认100，0表示不限制个数
+	  "LogFileFormat":"{0:yyyy_MM_dd}.log",//日志文件格式。默认{0:yyyy_MM_dd}.log，支持日志等级如 {1}_{0:yyyy_MM_dd}.log
+	  "BackupPath":"backup"//备份目录
+  }
+}
